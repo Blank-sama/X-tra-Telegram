@@ -1,10 +1,3 @@
-# Copyright (C) 2019 The Raphielscape Company LLC.
-#
-# Licensed under the Raphielscape Public License, Version 1.c (the "License");
-# you may not use this file except in compliance with the License.
-"""
-Userbot module to help you manage a group
-"""
 
 from asyncio import sleep
 from os import remove
@@ -145,7 +138,7 @@ async def promote(promt):
     try:
         await promt.client(
             EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit("`Promoted Successfully! Now gib Party`")
+        await promt.edit("`User Promoted `")
 
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
@@ -366,7 +359,7 @@ async def promote(promt):
     try:
         await promt.client(
             EditAdminRequest(promt.chat_id, user.id, new_rights, rank))
-        await promt.edit("`Promoted Successfully! Now gib Party`")
+        await promt.edit("`User promoted`")
 
     # If Telethon spit BadRequestError, assume
     # we don't have Promote permission
