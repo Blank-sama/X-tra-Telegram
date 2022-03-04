@@ -1,24 +1,4 @@
-#   Copyright 2019 - 2020 DarkPrinc3
 
-#   Licensed under the Apache License, Version 2.0 (the "License");
-#   you may not use this file except in compliance with the License.
-#   You may obtain a copy of the License at
-
-#       http://www.apache.org/licenses/LICENSE-2.0
-
-#   Unless required by applicable law or agreed to in writing, software
-#   distributed under the License is distributed on an "AS IS" BASIS,
-#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#   See the License for the specific language governing permissions and
-#   limitations under the License.
-
-# if you change credits, you get anal cancer and get murdered by russians in 3 days.
-"""
-Support chatbox for pmpermit.
-Used by incoming messages with trigger as /start
-Will not work for already approved people.
-Credits: written by ༺αиυвιѕ༻ {@A_Dark_Princ3}
-"""
 import asyncio
 import io 
 import telethon.sync
@@ -46,7 +26,7 @@ async def _(event):
                   "`1`. Female Homo-Sapien\n"
                   "`2`. Male Homo-Sapien\n"
                   "`3`. Other\n")
-         PM = ("`Hello. You are accessing the availabe menu of my peru master,`"
+         PM = ("`Hello. You are accessing the availabe menu of my master,`"
                f"{DEFAULTUSER}.\n"
                "__Let's make this smooth and let me know why you are here.__\n"
                "**Choose one of the following reasons why you are here:**\n\n"
