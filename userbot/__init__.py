@@ -77,7 +77,7 @@ if bool(ENV):
     except:
         pass
 
-    # Userbot logging feature switch.
+    # Bonten logging feature switch.
     BOTLOG = sb(os.environ.get("BOTLOG", "False"))
 
     # Bleep Blop, this is a bot ;)
@@ -177,4 +177,3 @@ CMD_HELP = {}
 ISAFK = False
 AFKREASON = None
 # End of PaperPlaneExtended Support Vars
-
