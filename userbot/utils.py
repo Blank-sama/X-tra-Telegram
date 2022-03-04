@@ -1,24 +1,11 @@
-#   Copyright 2019 - 2020 DarkPrinc3
 
-#   Licensed under the Apache License, Version 2.0 (the "License");
-#   you may not use this file except in compliance with the License.
-#   You may obtain a copy of the License at
-
-#       http://www.apache.org/licenses/LICENSE-2.0
-
-#   Unless required by applicable law or agreed to in writing, software
-#   distributed under the License is distributed on an "AS IS" BASIS,
-#   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-#   See the License for the specific language governing permissions and
-#   limitations under the License.
-
-from userbot import bot
+from Bonten import bot
 from telethon import events
 from var import Var
 from pathlib import Path
-from userbot.uniborgConfig import Config
-from userbot import LOAD_PLUG
-from userbot import CMD_LIST
+from Bonten.uniborgConfig import Config
+from Bonten import LOAD_PLUG
+from Bonten import CMD_LIST
 import re
 import logging
 import inspect
@@ -93,23 +80,23 @@ def load_module(shortname):
     if shortname.startswith("__"):
         pass
     elif shortname.endswith("_"):
-        import userbot.utils
+        import Bonten.utils
         import sys
         import importlib
         from pathlib import Path
-        path = Path(f"userbot/plugins/{shortname}.py")
-        name = "userbot.plugins.{}".format(shortname)
+        path = Path(f"Bonten/plugins/{shortname}.py")
+        name = "Bonten.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         spec.loader.exec_module(mod)
         print("Successfully (re)imported "+shortname)
     else:
-        import userbot.utils
+        import Bonten.utils
         import sys
         import importlib
         from pathlib import Path
-        path = Path(f"userbot/plugins/{shortname}.py")
-        name = "userbot.plugins.{}".format(shortname)
+        path = Path(f"Bonten/plugins/{shortname}.py")
+        name = "Bonten.plugins.{}".format(shortname)
         spec = importlib.util.spec_from_file_location(name, path)
         mod = importlib.util.module_from_spec(spec)
         mod.bot = bot
@@ -118,14 +105,14 @@ def load_module(shortname):
         mod.command = command
         mod.logger = logging.getLogger(shortname)
         # support for uniborg
-        sys.modules["uniborg.util"] = userbot.utils
+        sys.modules["uniborg.util"] = Bonten.utils
         mod.Config = Config
         mod.borg = bot
         # support for paperplaneextended
-        sys.modules["userbot.events"] = userbot.utils
+        sys.modules["Bonten.events"] = Bonten.utils
         spec.loader.exec_module(mod)
         # for imports
-        sys.modules["userbot.plugins."+shortname] = mod
+        sys.modules["Bonten.plugins."+shortname] = mod
         print("Successfully (re)imported "+shortname)
 
 def remove_plugin(shortname):
@@ -136,7 +123,7 @@ def remove_plugin(shortname):
             del LOAD_PLUG[shortname]
 
         except:
-            name = f"userbot.plugins.{shortname}"
+            name = f"Bonten.plugins.{shortname}"
 
             for i in reversed(range(len(bot._event_builders))):
                 ev, cb = bot._event_builders[i]
@@ -190,12 +177,12 @@ def admin_cmd(pattern=None, **args):
 
     return events.NewMessage(**args)
 
-""" Userbot module for managing events.
- One of the main components of the userbot. """
+""" Bonten module for managing events.
+ One of the main components of the Bonten. """
 
 from telethon import events
 import asyncio
-from userbot import bot
+from Bonten import bot
 from traceback import format_exc
 from time import gmtime, strftime
 import math
@@ -322,4 +309,3 @@ class Loader():
     def __init__(self, func=None, **args):
         self.Var = Var
         bot.add_event_handler(func, events.NewMessage(**args))
-
