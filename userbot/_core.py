@@ -12,18 +12,18 @@
 #   See the License for the specific language governing permissions and
 #   limitations under the License.
 
-from userbot import bot
+from Bonten import bot
 from telethon import events
-from userbot.utils import command, remove_plugin, load_module
+from Bonten.utils import command, remove_plugin, load_module
 from var import Var
 import importlib
 from pathlib import Path
-from userbot import LOAD_PLUG
+from Bonten import LOAD_PLUG
 import sys
 import asyncio
 import traceback
 import os
-import userbot.utils
+import Bonten.utils
 from datetime import datetime
 
 DELETE_TIMEOUT = 5
@@ -36,7 +36,7 @@ async def install(event):
         try:
             downloaded_file_name = await event.client.download_media(  # pylint:disable=E0602
                 await event.get_reply_message(),
-                "userbot/plugins/"  # pylint:disable=E0602
+                "Bonten/plugins/"  # pylint:disable=E0602
             )
             if "(" not in downloaded_file_name:
                 path1 = Path(downloaded_file_name)
@@ -58,7 +58,7 @@ async def send(event):
         return
     message_id = event.message.id
     input_str = event.pattern_match["shortname"]
-    the_plugin_file = "./userbot/plugins/{}.py".format(input_str)
+    the_plugin_file = "./Bonten/plugins/{}.py".format(input_str)
     start = datetime.now()
     await event.client.send_file(  # pylint:disable=E0602
         event.chat_id,
