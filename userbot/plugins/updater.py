@@ -1,19 +1,7 @@
-"""Update UserBot code (for Xtra-Telegram)
-Syntax: .update
-\nAll Credits goes to © @Three_Cube_TeKnoways
-\nFor this awasome plugin.\nPorted from PpaperPlane Extended"""
-
 from os import remove
 from os import execl
 import sys
 
-# from git import Repo
-# from git.exc import GitCommandError
-# from git.exc import InvalidGitRepositoryError
-# from git.exc import NoSuchPathError
-
-# from .. import bot
-# from userbot.utils import register
 
 import git
 import asyncio
