@@ -1,9 +1,3 @@
-"""
-Say something interesting...
-Syntax: .belo
-    by @Deonnn
-Quotes credits: Being logical Channel
-"""
 
 from telethon import events
 
@@ -17,7 +11,7 @@ import random
 
 
 
-@borg.on(events.NewMessage(pattern=r"\.belo", outgoing=True))
+@borg.on(events.NewMessage(pattern=r"\.qoutes", outgoing=True))
 
 async def _(event):
 
