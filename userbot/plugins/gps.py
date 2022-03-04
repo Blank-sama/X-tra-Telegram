@@ -7,7 +7,7 @@ credits :@mrconfused
 # don't edit credits 
 
 from geopy.geocoders import Nominatim
-from userbot.utils import admin_cmd
+from Bonten.utils import admin_cmd
 from telethon.tl import types
 
 
