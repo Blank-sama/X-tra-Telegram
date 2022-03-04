@@ -1,14 +1,8 @@
-"""Emoji
-
-Available Commands:
-
-.wtf"""
-
 from telethon import events
 
 import asyncio
 
-from userbot.utils import admin_cmd
+from Bonten.utils import admin_cmd
 
 @borg.on(admin_cmd("(.*)"))
 async def _(event):
