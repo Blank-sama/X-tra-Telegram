@@ -1,11 +1,3 @@
-# Thanks to @AvinashReddy3108 for this plugin
-
-"""
-Audio and video downloader using Youtube-dl
-.yta To Download in mp3 format
-.ytv To Download in mp4 format
-"""
-
 import os
 import time
 import math
